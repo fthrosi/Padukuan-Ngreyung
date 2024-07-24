@@ -1,0 +1,4 @@
+.fullScreen {
+  height: 100vh;
+  object-fit: cover; /* Pastikan gambar menutupi seluruh area */
+}

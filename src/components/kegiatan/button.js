@@ -1,0 +1,9 @@
+import Link from "next/link";
+const Button = ()=>{
+    return(
+        <Link href="/informasi">
+            <h1 className="btn lg:text-2xl md:text-2xl bg-white text-[#283a2c] px-4 py-2 rounded-lg m-5 underline">See All</h1>
+        </Link>
+    )
+}
+export default Button
