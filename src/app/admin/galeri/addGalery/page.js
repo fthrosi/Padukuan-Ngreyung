@@ -59,7 +59,7 @@ const AddGaleryPage = () => {
                 setPreview(null);
                 router.push('/admin/galeri');
                 toast.success('Berhasil menambahkan data',{
-                    position: 'top-right',
+                    position: 'top-center',
                     duration: 2000
                 });
             })

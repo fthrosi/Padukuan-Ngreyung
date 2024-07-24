@@ -20,7 +20,6 @@ const DetailInformasi = ({ params }) => {
             }
             querySnapshot.forEach((doc) => {
                 const data = doc.data();
-                console.log('Fetched data:', data); // Logging fetched data
                 setDatas(data);
             });
         } catch (error) {

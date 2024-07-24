@@ -36,7 +36,7 @@ const Footer = () => {
         </div>
       </div>
       <div className='flex justify-center lg:mt-0 md:mt-0'>
-        <p>&copy; 2024 KKN 85 UAJY. All rights reserved.</p>
+        <p>&copy; 2024 KKN 85 UAJY KELOMPOK 61. All rights reserved.</p>
       </div>
     </footer>
   );

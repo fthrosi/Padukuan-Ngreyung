@@ -1,12 +1,9 @@
 "use client"
-// pages/login.js
 import { useState } from "react";
 import { auth } from "@/service/firebase";
 import { useRouter } from "next/navigation";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import dynamic from 'next/dynamic';
-
-const LoginLayout = dynamic(() => import('./layout'), { ssr: false });
+import { toast } from "sonner";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -19,8 +16,13 @@ const Login = () => {
     console.log("Login button clicked");
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      console.log("Login successful");
-      router.push("/admin/kegiatan");
+      toast.success('Berhasil Login', {
+        position: 'top-center',
+        duration: 2000
+      });
+      setTimeout(() => {
+        router.push("/admin/kegiatan");
+      }, 2000)
     } catch (error) {
       console.log("Error during login:", error.message);
       setError(error.message);
@@ -29,7 +31,6 @@ const Login = () => {
   
 
   return (
-    <LoginLayout>
     <div className="h-screen flex justify-center items-center bg-[#354b396f]">
       <div className="w-full max-w-sm">
         <form onSubmit={handleLogin} className="bg-white text-[#354b39] shadow-md rounded px-8 pt-6 pb-8 mb-4">
@@ -64,7 +65,6 @@ const Login = () => {
         {error && <p className="text-red-500 text-xs italic">{error}</p>}
       </div>
     </div>
-    </LoginLayout>
   );
 };
 

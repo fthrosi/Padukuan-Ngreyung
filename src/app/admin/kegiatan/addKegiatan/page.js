@@ -82,7 +82,7 @@ const TambahArtikelPage = () => {
                 setPreview(null);
                 router.push('/admin/kegiatan');
                 toast.success('Berhasil menambahkan data',{
-                    position: 'top-right',
+                    position: 'top-center',
                     duration: 2000
                 });
             })

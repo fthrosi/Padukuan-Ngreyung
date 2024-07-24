@@ -14,7 +14,7 @@ const ModalHapus = ({ id, reload, linkImage}) => {
     const storageRef = ref(storage, linkImage);
     await deleteObject(storageRef);
     toast.success("Data berhasil dihapus",{
-      position: "top-right",
+      position: "top-center",
       duration: 2000,
     });
     reload();

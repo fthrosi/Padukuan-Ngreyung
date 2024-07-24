@@ -20,12 +20,12 @@ import { Spinner } from "@nextui-org/react";
 
 const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
 
-// Validation schema for form fields
+
 const validationSchema = yup.object({
     judul: yup.string().required('Judul diperlukan'),
     deskripsi: yup.string().required('deskripsi diperlukan'),
     gambar: yup.mixed().nullable().test('fileSize', 'Gambar tidak boleh lebih dari 1MB', (value) => {
-        if (!value) return true; // Allow null or undefined values
+        if (!value) return true; 
         return value.size <= 1*1024*1024;
     })
 })
@@ -38,7 +38,7 @@ const EditKegiatan = ({ params }) => {
     const decodeId = decodeURIComponent(id);
     const [isSubmitting, setIsSubmitting] = React.useState(false);
 
-    // ReactQuill modules configuration
+    
     const modules = {
         toolbar: [
             [{ font: [] }],
@@ -50,7 +50,7 @@ const EditKegiatan = ({ params }) => {
         ]
     };
 
-    // Formik for form handling and validation
+    
     const formik = useFormik({
         initialValues: {
             judul: '',
@@ -61,10 +61,9 @@ const EditKegiatan = ({ params }) => {
         validationSchema: validationSchema,
         onSubmit: async (values) => {
             setIsSubmitting(true); 
-            let imageUrl = preview; // Use existing image URL as default
+            let imageUrl = preview; 
 
             if (values.gambar) {
-                // Delete existing image from storage
                 const storageRef = ref(storage, oldImage);
                 await deleteObject(storageRef);
                 const folder = 'kegiatan/';
@@ -72,7 +71,6 @@ const EditKegiatan = ({ params }) => {
                 imageUrl = await getFile(imagePath);
             }
 
-            // Updating the document in Firestore
             const q = query(collection(db, 'kegiatan'), where('id', '==', id));
             const querySnapshot = await getDocs(q);
             const docRef = doc(db, 'kegiatan', querySnapshot.docs[0].id);
@@ -90,7 +88,7 @@ const EditKegiatan = ({ params }) => {
             
 
             toast.success('Artikel berhasil diubah', {
-                position: 'top-right',
+                position: 'top-center',
                 duration: 2000
             });
             router.push('/admin/kegiatan');
@@ -111,7 +109,6 @@ const EditKegiatan = ({ params }) => {
 
     // Fetching data for the article to be edited
     useEffect(() => {
-        console.log(decodeId);
         const fetchData = async () => {
             try {
                 const q = query(collection(db, 'kegiatan'), where('id', '==', decodeId));
@@ -122,7 +119,6 @@ const EditKegiatan = ({ params }) => {
                 }
                 querySnapshot.forEach((doc) => {
                     const data = doc.data();
-                    console.log('Document data:', data); // Add this line for debugging
                     formik.setFieldValue('judul', data.judul);
                     formik.setFieldValue('deskripsi', data.deskripsi);
                     setPreview(data.gambar);
@@ -151,6 +147,7 @@ const EditKegiatan = ({ params }) => {
                                             <Input
                                                 type='text'
                                                 label='Judul'
+                                                id='Judul'
                                                 placeholder='Judul'
                                                 isRequired
                                                 labelPlacement='outside'
@@ -162,13 +159,13 @@ const EditKegiatan = ({ params }) => {
                                             )}
                                         </div>
                                         <div className='flex flex-col'>
-                                            <label htmlFor='gambar' className='text-sm'>Gambar</label>
-                                            <input
+                                            <Input
                                                 type='file'
                                                 id='gambar'
                                                 onChange={handleImageChange}
                                                 accept='image/*'
                                                 label='Gambar'
+                                                labelPlacement='outside'
                                                 placeholder='Pilih Gambar'
                                                 name='gambar'
                                             />
@@ -180,7 +177,6 @@ const EditKegiatan = ({ params }) => {
                                             {preview && <Image src={preview} className='w-full aspect-[16/9]' />}
                                         </div>
                                         <div className='h-52 mb-6'>
-                                            <label htmlFor='deskripsi' className='text-sm'>Konten</label>
                                             <ReactQuill 
                                                 id='deskripsi'
                                                 theme='snow'

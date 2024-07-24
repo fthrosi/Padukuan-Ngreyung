@@ -7,7 +7,6 @@ const Navbar = () => {
   const [scroll, setScroll] = useState(false);
   const [open,setOpen] = useState(false);
   const changeBackground = () => {
-    console.log("window.scrollY:", window.scrollY);
     if (window.scrollY >= 10) {
       setScroll(true);
     } else {
@@ -22,10 +21,10 @@ const Navbar = () => {
     <nav className={`py-4 lg:px-96  fixed w-screen ${scroll? "bg-[#354b39]":"bg-transparent"} z-50`}>
       <div className={`lg:mx-auto flex md:items-center items-start md:justify-center lg:justify-between px-5 md:px-0 lg:px-0 ${open?"justify-end":"justify-between"} text-white `}>
         <Link href="/" className={`display  ${open?"hidden":"flex items-center"}`}>
-          <div className="relative w-12 h-12 md:w-18 md:h-18 lg:w-24 lg:h-24">
+          <div className="relative w-12 h-12 md:w-18 md:h-18 lg:w-20 lg:h-20">
             <Image src="/images/logo.png" alt="logo" layout="fill" objectFit="contain" />
           </div>
-          <h1 className="lg:text-3xl md:text-xl text-sm font-bold ">Padukuhan Ngreyung</h1>
+          <h1 className="lg:text-3xl md:text-xl text-sm font-bold ml-2">Padukuhan Ngreyung</h1>
         </Link>
         <ul className="nav-links hidden display md:flex lg:space-x-10 md:space-x-2 md:ml-7 lg:text-3xl md:text-xl font-bold">
           <li>
@@ -44,7 +43,7 @@ const Navbar = () => {
         </Link>
         
         <div className='md:hidden lg:hidden block relative w-5 h-5 mt-4' onClick={() => setOpen(!open)}>
-        {scroll ? (open ? <Image src="/icon/cross-button.png" layout="fill" objectFit="contain"></Image>:<Image src="/icon/equal.png" layout="fill" objectFit="contain"></Image>):(open ? <Image src="/icon/incorrect.png" layout="fill" objectFit="contain"></Image>:<Image src="/icon/equal.png" layout="fill" objectFit="contain"></Image>)}
+        {scroll ? (open ? <Image src="/icon/cross-button.png" layout="fill" objectFit="contain" alt='logo'></Image>:<Image src="/icon/equal.png" layout="fill" objectFit="contain" alt='logo'></Image>):(open ? <Image src="/icon/incorrect.png" layout="fill" objectFit="contain" alt='logo'></Image>:<Image src="/icon/equal.png" layout="fill" objectFit="contain" alt='logo'></Image>)}
         </div>
       </div>
     </nav>

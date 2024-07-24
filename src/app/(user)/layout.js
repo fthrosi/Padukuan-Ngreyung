@@ -4,6 +4,7 @@ import Providers from"@/components/home/provider"
 import Navbar from '../../components/home/topNavbar';
 import Footer from '@/components/home/footer';
 
+
 const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({ children }) {
