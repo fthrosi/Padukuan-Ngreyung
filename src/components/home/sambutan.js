@@ -4,7 +4,7 @@ const sambutan = () => {
   return (
         <div className="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 bg-[#677D6A]">
           <div className="flex lg:pt-36 md:pt-36 pt-16 sm:order-1 justify-center">
-            <div className="pb-10 relative w-80 h-60 md:w-96 md:h-[550px] lg:w-[600px] lg:h-[580px] rounded-xl">
+            <div className="pb-10 relative w-80 h-60 md:w-96 md:h-[550px] lg:w-[800px] lg:h-[580px] rounded-xl">
               <Image src="/images/home.jpg" alt="padukuhan ngreyung" layout="fill" objectFit="cover" className='rounded-xl'/>
             </div>
           </div>
@@ -12,7 +12,7 @@ const sambutan = () => {
             <h1 className="lg:text-4xl md:text-2xl text-lg font-bold">
               Padukuhan Ngreyung
             </h1>
-            <p className="lg:text-4xl lg:mt-5 md:mt-5 text-justify whitespace-pre-wrap md:text-xl">
+            <p className="lg:text-2xl lg:mt-5 md:mt-5 text-justify whitespace-pre-wrap md:text-lg">
               {`
 Selamat datang di website resmi Padukuhan Ngreyung. 
 

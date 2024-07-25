@@ -21,7 +21,7 @@ const Navbar = () => {
     <nav className={`py-4 lg:px-96  fixed w-screen ${scroll? "bg-[#354b39]":"bg-transparent"} z-50`}>
       <div className={`lg:mx-auto flex md:items-center items-start md:justify-center lg:justify-between px-5 md:px-0 lg:px-0 ${open?"justify-end":"justify-between"} text-white `}>
         <Link href="/" className={`display  ${open?"hidden":"flex items-center"}`}>
-          <div className="relative w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16">
+          <div className="relative w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14">
             <Image src="/images/logo.png" alt="logo" layout="fill" objectFit="contain" />
           </div>
           <h1 className="lg:text-xl md:text-lg text-sm font-bold ml-2">Padukuhan Ngreyung</h1>
@@ -39,7 +39,7 @@ const Navbar = () => {
           </li>
         </ul>
         <Link href="/informasi">
-          <button className={`btn md:block hidden lg:text-2xl md:text-lg ${scroll ? "bg-white text-[#283a2c]":"bg-[#283a2c] text-white"}   lg:px-4 :py-2 md:px-2 md:py-1 rounded-lg m-5`}>Telusuri</button>
+          <button className={`btn md:block hidden lg:text-xl md:text-lg ${scroll ? "bg-white text-[#283a2c]":"bg-[#283a2c] text-white"}   lg:px-2 lg:py-2 md:px-2 md:py-1 rounded-lg m-5`}>Telusuri</button>
         </Link>
         
         <div className='md:hidden lg:hidden block relative w-5 h-5 mt-4' onClick={() => setOpen(!open)}>
