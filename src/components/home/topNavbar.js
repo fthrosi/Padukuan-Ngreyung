@@ -21,12 +21,12 @@ const Navbar = () => {
     <nav className={`py-4 lg:px-96  fixed w-screen ${scroll? "bg-[#354b39]":"bg-transparent"} z-50`}>
       <div className={`lg:mx-auto flex md:items-center items-start md:justify-center lg:justify-between px-5 md:px-0 lg:px-0 ${open?"justify-end":"justify-between"} text-white `}>
         <Link href="/" className={`display  ${open?"hidden":"flex items-center"}`}>
-          <div className="relative w-12 h-12 md:w-18 md:h-18 lg:w-20 lg:h-20">
+          <div className="relative w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16">
             <Image src="/images/logo.png" alt="logo" layout="fill" objectFit="contain" />
           </div>
-          <h1 className="lg:text-3xl md:text-xl text-sm font-bold ml-2">Padukuhan Ngreyung</h1>
+          <h1 className="lg:text-xl md:text-lg text-sm font-bold ml-2">Padukuhan Ngreyung</h1>
         </Link>
-        <ul className="nav-links hidden display md:flex lg:space-x-10 md:space-x-2 md:ml-7 lg:text-3xl md:text-xl font-bold">
+        <ul className="nav-links hidden display md:flex lg:space-x-10 md:space-x-2 md:ml-7 lg:text-xl md:text-lg font-bold">
           <li>
             <Link href="/informasi">
               <h1 className=''>Informasi</h1>

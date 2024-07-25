@@ -14,7 +14,6 @@ const firebaseConfig = {
   measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID
 };
 
-// Initialize Firebase
 let app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0];
 const db = getFirestore(app);
 const auth = getAuth(app);
@@ -22,6 +21,5 @@ const STORAGE_FOLDER_PATH = "gs://ngreyung.appspot.com";
 
 export const storage = getStorage(app, STORAGE_FOLDER_PATH);
 
-// const analytics = getAnalytics(app);
 
 export {app, db, auth};
