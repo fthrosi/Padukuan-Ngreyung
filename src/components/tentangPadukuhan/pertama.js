@@ -24,7 +24,7 @@ const Pertama = () => {
     return (
         <>
         {data.map((item, index) => (
-        <div className="relative w-full h-[250px] md:h-[500px] lg:h-[900px]" key={index}>
+        <div className="relative w-full h-[200px] md:h-[500px] lg:h-[900px]" key={index}>
             <Image src={item.image} alt={`Gambar ${index+1}`} layout="fill" objectFit="cover" />
         </div>
         ))}
