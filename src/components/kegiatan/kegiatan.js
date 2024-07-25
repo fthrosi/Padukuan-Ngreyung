@@ -56,7 +56,7 @@ const Kegiatan = () => {
                   layout="responsive" 
                   width={800} 
                   height={600} 
-                  className="rounded-t-lg lg:h-[300px] h-[100px] md:h-[200px]" 
+                  className="rounded-t-lg lg:h-[300px] h-[200px] md:h-[200px]" 
                 />
                 <div className='p-5'>
                   <h1 className="lg:text-2xl md:text-2xl text-xl font-bold">{truncateText(data.judul, 23)}</h1>
