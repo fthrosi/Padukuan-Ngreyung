@@ -34,6 +34,69 @@ const Sidebar = () => {
             </Link>
           </li>
           <li className="mb-4">
+            <Link href="/admin/about/pertama">
+              <h1 className='text-xl'>
+                About Pertama
+              </h1>
+            </Link>
+          </li>
+          <li className="mb-4">
+            <Link href="/admin/about/kedua">
+              <h1 className='text-xl'>
+                About Kedua
+              </h1>
+            </Link>
+          </li>
+          <li className="mb-4">
+            <Link href="/admin/about/ketiga">
+              <h1 className='text-xl'>
+                About Ketiga
+              </h1>
+            </Link>
+          </li>
+          <li className="mb-4">
+            <Link href="/admin/about/keempat">
+              <h1 className='text-xl'>
+                About Keempat
+              </h1>
+            </Link>
+          </li>
+          <li className="mb-4">
+            <Link href="/admin/about/pejabat/Dukuh">
+              <h1 className='text-xl'>
+                Dukuh
+              </h1>
+            </Link>
+          </li>
+          <li className="mb-4">
+            <Link href="/admin/about/pejabat/Rt1">
+              <h1 className='text-xl'>
+                RT 1
+              </h1>
+            </Link>
+          </li>
+          <li className="mb-4">
+            <Link href="/admin/about/pejabat/Rt2">
+              <h1 className='text-xl'>
+                RT 2
+              </h1>
+            </Link>
+          </li>
+          <li className="mb-4">
+            <Link href="/admin/about/pejabat/Rt3">
+              <h1 className='text-xl'>
+                RT 3
+              </h1>
+            </Link>
+          </li>
+          <li className="mb-4">
+            <Link href="/admin/about/pejabat/Rw">
+              <h1 className='text-xl'>
+                RW
+              </h1>
+            </Link>
+          </li>
+          <li className="mb-4">
             <Button color='danger' onClick={handleLogout}>
             Logout
             </Button>

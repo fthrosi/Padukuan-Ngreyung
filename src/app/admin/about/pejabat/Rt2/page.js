@@ -1,5 +1,5 @@
 "use client"
-import Btn from "@/components/kegiatan/addKegiatanButton";
+import Btn from "@/components/tentangPadukuhan/buttonRt2";
 import React from "react";
 import {
   Table,
@@ -13,46 +13,26 @@ import {
   Pagination,
   image,
 } from "@nextui-org/react";
-import { FaCirclePlus } from "react-icons/fa6";
 import { db } from "@/service/firebase";
 import { collection, getDocs } from "firebase/firestore";
 import Link from "next/link";
-import ModalHapus from "@/components/kegiatan/modalHapusKegiatan";
 import authCheck from "@/components/auth/authcheck";
 
 const kegiatanPage = () => {
     const [datas, setDatas] = React.useState([]);
     const fetchData = async () => {
-        const querySnapshot = await getDocs(collection(db, "kegiatan"));
+        const querySnapshot = await getDocs(collection(db, "rt2"));
         const result = querySnapshot.docs.map((doc) => {
           return {
             key: doc.id,
             id: doc.data().id,
             tanggalPembuatan: doc.data().tanggalPembuatan,
-            tanggal: doc.data().tanggal,
-            judul: doc.data().judul,
+            nama: doc.data().nama,
+            jabatan: doc.data().jabatan,
             image: doc.data().gambar,
-            actions: (
-              <div className="space-x-1 flex flex-wrap">
-                <Button
-                  color="warning"
-                  as={Link}
-                  href={`/admin/kegiatan/editKegiatan/${doc.data().id}`}
-                >
-                  Ubah
-                </Button>
-                <ModalHapus
-                  id={doc.id}
-                  reload={fetchData}
-                  linkImage={doc.data().gambar}
-                />
-              </div>
-            ),
           };
         });
-        const sortedResult = result.sort(
-          (a, b) => new Date(b.tanggalPembuatan) - new Date(a.tanggalPembuatan))
-        setDatas(sortedResult);
+        setDatas(result);
       };
     const [page, setPage] = React.useState(1);
     const rowsPerPage = 5;
@@ -93,12 +73,8 @@ const kegiatanPage = () => {
         >
             <TableHeader>
                 <TableColumn key="Gambar" className="text-center">GAMBAR</TableColumn>
-                <TableColumn key="namaKegiatan" className="text-center">JUDUL</TableColumn>
-                <TableColumn key="tanggal" className="text-center">TANGGAL PEMBUATAN</TableColumn>
-                <TableColumn key="deskripsi" className="text-center">TANGGAL KEGIATAN</TableColumn>
-                <TableColumn key="actions" width="200" className="text-center">
-                    Actions
-                </TableColumn>
+                <TableColumn key="namaKegiatan" className="text-center">Nama</TableColumn>
+                <TableColumn key="deskripsi" className="text-center">Jabatan</TableColumn>
             </TableHeader>
             <TableBody items={items}>
                 {(item) => (
@@ -107,12 +83,11 @@ const kegiatanPage = () => {
                             <img
                                 src={item.image}
                                 className="w-60 h-60 object-cover rounded-lg"
+                                alt="Pejabat"
                             />
                         </TableCell>
-                        <TableCell><div className="flex justify-center">{item.judul}</div></TableCell>
-                        <TableCell><div className="flex justify-center">{item.tanggalPembuatan}</div></TableCell>
-                        <TableCell><div className="flex justify-center">{item.tanggal}</div></TableCell>
-                        <TableCell><div className="flex justify-center">{item.actions}</div></TableCell>
+                        <TableCell><div className="flex justify-center">{item.nama}</div></TableCell>
+                        <TableCell><div className="flex justify-center">{item.jabatan}</div></TableCell>
                     </TableRow>
                 )}
             </TableBody>

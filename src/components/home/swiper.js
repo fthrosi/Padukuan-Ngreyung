@@ -16,10 +16,12 @@ const Myswiper = () => {
       return {
         key: doc.id,
         id: doc.data().id,
+        tanggalPembuatan: doc.data().tanggalPembuatan,
         image: doc.data().gambar,
       };
     });
-    setData(result);
+    const sortedResult = result.sort((a, b) => new Date(b.tanggalPembuatan) - new Date(a.tanggalPembuatan));
+    setData(sortedResult);
   };
   React.useEffect(() => {
 

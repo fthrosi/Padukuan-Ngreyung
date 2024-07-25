@@ -5,11 +5,14 @@ const Footer = () => {
   return (
     <footer className="bg-[#354b39] text-white">
       <div className="grid lg:grid-cols-3 md:grid-cols-3 grid-cols-1 lg:p-20 md:p-10 p-5">
-        <div className='pl-5 flex lg:justify-center lg:items-center order-1'>
-          <h1 className='lg:text-2xl md:text-xl'>
-            Alamat: Ngreyung, Pucung,<br />
-            Girisubo, Kabupaten Gunung Kidul,<br />
-            Daerah Istimewa Yogyakarta 55883
+        <div className='pl-5 flex flex-col lg:justify-center lg:items-center order-1'>
+          <h1 className='lg:text-4xl md:text-xl'>
+            Alamat
+          </h1>
+          <h1 className='lg:mt-8 lg:text-2xl md:text-xl'>
+            Ngreyung, Pucung,Girisubo, <br />
+            Kabupaten Gunung Kidul,<br />
+            Daerah Istimewa Yogyakarta
           </h1>
         </div>
         <div className='lg:pl-10 md:pl-10 pl-5 pr-10  flex lg:justify-center lg:items-center order-2 lg:mt-0 md:mt-0 mt-5'>
@@ -26,7 +29,7 @@ const Footer = () => {
             <h1 className='lg:text-5xl md:text-3xl text-xl'>
               Kontak Kami
             </h1>
-            <h1 className='lg:mt-1 mt-2 lg:text-2xl md:text-xl'>
+            <h1 className='lg:mt-8 mt-2 lg:text-2xl md:text-xl'>
               Telepon : 0821125657
             </h1>
             <h1 className='lg:text-2xl md:text-xl'>

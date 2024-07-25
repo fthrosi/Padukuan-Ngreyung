@@ -1,5 +1,5 @@
 "use client";
-import Btn from "@/components/galeri/addGaleri";
+import Btn from "@/components/tentangPadukuhan/buton1";
 import React from "react";
 import {
   Table,
@@ -19,22 +19,13 @@ import authCheck from "@/components/auth/authcheck";
 const galeriPage = () => {
   const [data, setData] = React.useState([]);
   const fetchData = async () => {
-    const querySnapshot = await getDocs(collection(db, "galeri"));
+    const querySnapshot = await getDocs(collection(db, "pertama"));
     const result = querySnapshot.docs.map((doc) => {
       return {
         key: doc.id,
         id: doc.data().id,
         tanggalPembuatan: doc.data().tanggalPembuatan,
         image: doc.data().gambar,
-        actions: (
-          <div className="space-x-1 flex flex-wrap">
-            <ModalHapus
-              id={doc.id}
-              reload={fetchData}
-              linkImage={doc.data().gambar}
-            />
-          </div>
-        ),
       };
     });
     const sortedResult = result.sort(
@@ -85,9 +76,6 @@ const galeriPage = () => {
             >
             <TableHeader>
                 <TableColumn key="image" className="text-center">GAMBAR</TableColumn>
-                <TableColumn key="actions" width="400" className="text-center">
-                Actions
-                </TableColumn>
             </TableHeader>
             <TableBody items={items}>
                 {(item) => (
@@ -99,7 +87,6 @@ const galeriPage = () => {
                         className="w-80 h-52 object-cover rounded-lg"
                     />
                     </TableCell>
-                    <TableCell><div className="flex justify-center">{item.actions}</div></TableCell>
                 </TableRow>
                 )}
             </TableBody>

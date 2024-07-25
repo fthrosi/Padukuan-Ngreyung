@@ -9,6 +9,10 @@ const inter = Inter({ subsets: ["latin"] });
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/logo2.png" />
+        <title>Padukuhan Ngreyung</title>
+      </head>
       <body className={`${inter.className}`}>
         <Toaster/>
         <Sidebar />

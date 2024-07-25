@@ -11,18 +11,22 @@ const Artikel = () => {
   const [isMdScreen, setIsMdScreen] = React.useState(false);
 
   const fetchData = async () => {
-    setLoading(true); // Set loading menjadi true sebelum memulai fetch data
+    setLoading(true);
     const querySnapshot = await getDocs(collection(db, "kegiatan"));
     const result = querySnapshot.docs.map((doc) => ({
       key: doc.id,
       id: doc.data().id,
+      tanggalPembuatan: doc.data().tanggalPembuatan,
       tanggal: doc.data().tanggal,
       judul: doc.data().judul,
       image: doc.data().gambar,
       deskripsi: doc.data().deskripsi,
-    }));
+      
+  }));
 
-    setDatas(result);
+
+    const sortedResult = result.sort((a, b) => new Date(b.tanggalPembuatan) - new Date(a.tanggalPembuatan));
+    setDatas(sortedResult);
     setTimeout(() => {
       setLoading(false); 
     }, 500); 
