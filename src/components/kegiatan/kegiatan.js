@@ -59,7 +59,7 @@ const Kegiatan = () => {
                   className="rounded-t-lg lg:h-[300px] h-[100px] md:h-[200px]" 
                 />
                 <div className='p-5'>
-                  <h1 className="lg:text-2xl md:text-2xl text-xl font-bold">{data.judul}</h1>
+                  <h1 className="lg:text-2xl md:text-2xl text-xl font-bold">{truncateText(data.judul, 23)}</h1>
                   <p className="lg:text-lg md:text-lg text-base font-medium">{data.tanggal}</p>
                   <p className="lg:text-lg md:text-lg text-base" dangerouslySetInnerHTML={{ __html: truncateText(data.deskripsi, 100) }}></p>
                 </div>

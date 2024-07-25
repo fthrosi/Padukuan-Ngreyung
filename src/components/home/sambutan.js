@@ -4,7 +4,7 @@ const sambutan = () => {
   return (
         <div className="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 bg-[#677D6A]">
           <div className="flex lg:pt-36 md:pt-36 pt-16 sm:order-1 justify-center">
-            <div className="pb-10 relative w-80 h-60 md:w-96 md:h-[550px] lg:w-[800px] lg:h-[580px] rounded-xl">
+            <div className="pb-10 relative w-80 h-60 md:w-96 md:h-[550px] lg:w-[800px] lg:h-[680px] rounded-xl">
               <Image src="/images/home.jpg" alt="padukuhan ngreyung" layout="fill" objectFit="cover" className='rounded-xl'/>
             </div>
           </div>
