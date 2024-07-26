@@ -4,7 +4,7 @@ import Link from 'next/link';
 const Footer = () => {
   return (
     <footer className="bg-[#354b39] text-white">
-      <div className="grid lg:grid-cols-3 md:grid-cols-3 grid-cols-1 lg:p-20 md:p-10 p-2">
+      <div className="grid lg:grid-cols-3 md:grid-cols-3 grid-cols-1 lg:p-20 md:p-10 p-3">
         <div className=' flex flex-col lg:justify-center lg:items-center order-1'>
           <h1 className='lg:text-3xl md:text-xl'>
             Alamat
@@ -38,7 +38,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className='flex justify-center lg:mt-0 md:mt-0 lg:text-base md:text-base text-sm'>
+      <div className='flex justify-center lg:mt-0 md:mt-0 mt-5 lg:text-base md:text-base text-sm'>
         <p>&copy; 2024 KKN 85 UAJY KELOMPOK 61. All rights reserved.</p>
       </div>
     </footer>
