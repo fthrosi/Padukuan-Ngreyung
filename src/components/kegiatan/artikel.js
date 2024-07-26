@@ -62,7 +62,7 @@ const Artikel = () => {
       ) : (
         datas.map((item, index) => (
           <Link href={`/informasi/detailInformasi/${item.id}`} key={index}>
-            <div className="flex space-x-4 mt-5">
+            <div className="flex space-x-4 pt-5 pb-5">
               <img 
                 src={item.image} 
                 alt="kegiatan" 
