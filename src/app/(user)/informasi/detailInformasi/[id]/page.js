@@ -36,7 +36,7 @@ const DetailInformasi = ({ params }) => {
 
     return (
         <div className="bg-[#354b396f] flex justify-center lg:pt-[110px] md:pt-[110px] pt-16">
-            <div className="bg-white w-[1800px] min-h-screen p-20">
+            <div className="bg-white w-[1800px] min-h-screen p-8">
                 {loading? (
                     <div className="flex justify-center items-center min-h-screen">
                     <Spinner color="primary" size="lg" className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
