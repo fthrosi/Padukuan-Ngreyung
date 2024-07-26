@@ -30,10 +30,10 @@ const Footer = () => {
               Kontak Kami
             </h1>
             <h1 className='lg:mt-8 mt-2 lg:text-2xl md:text-xl'>
-              Telepon : 0821125657
+              Telepon : 089675775700
             </h1>
             <h1 className='lg:text-2xl md:text-xl'>
-              Email : Ngreyung@gmail.com
+              Email : padukuhanngreyung@gmail.com
             </h1>
           </div>
         </div>
