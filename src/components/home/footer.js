@@ -15,7 +15,7 @@ const Footer = () => {
             Daerah Istimewa Yogyakarta
           </h1>
         </div>
-        <div className='lg:pl-10 md:pl-10 pr-10  flex lg:justify-center lg:items-center order-2 lg:mt-0 md:mt-0 mt-5'>
+        <div className='flex lg:justify-center lg:items-center order-2 lg:mt-0 md:mt-0 mt-5'>
             <nav >
                 <h1 className='flex lg:justify-center md:justify-center items-center lg:text-3xl md:text-2xl text-xl'>Ikuti Kami</h1>
                 <ul className='flex lg:justify-center md:justify-center items-center lg:m-10 md:m-10 mt-5 lg:pl-20 lg:pr-20 lg:space-x-10 md:space-x-10 space-x-5'>

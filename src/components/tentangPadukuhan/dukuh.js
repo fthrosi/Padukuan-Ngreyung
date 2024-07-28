@@ -20,7 +20,7 @@ const sambutanDukuh = () => {
   , []);
     return(
         <div className="grid lg:grid-cols-2 md:grid-cols-1 grid-cols-1">
-                <pre className="whitespace-pre-wrap pr-4 pl-4 rounded-lg text-[#354b39] text-justify md:text-2xl lg:text-2xl text-xl order-2">
+                <pre className="whitespace-pre-wrap pr-4 pl-4 rounded-lg text-[#354b39] text-justify md:text-base lg:text-base text-base order-2">
                   {`
 Assalamu'alaikum warahmatullahi wabarakatuh,
     
@@ -40,7 +40,7 @@ Kepala Desa Ngreyung
                   `}
                 </pre>
                 <div className="flex justify-center items-center order-1 lg:mt-0 md:mt-0 mt-5">
-                  <div className="relative w-64 h-64 md:w-96 md:h-96 lg:w-[700px] lg:h-[700px]">
+                  <div className="relative w-64 h-64 md:w-96 md:h-96 lg:w-[500px] lg:h-[500px]">
                     {data.map((data, index) => (
                       <Image src={data.image} alt="logo" layout="fill" objectFit="contain" key={index}/>
                     ))}

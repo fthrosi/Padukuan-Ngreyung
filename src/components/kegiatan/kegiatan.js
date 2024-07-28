@@ -41,7 +41,7 @@ const Kegiatan = () => {
     <>
       <div className='bg-[#677D6A]'>
         <div className="text-center lg:py-10 text-white">
-          <h1 className="lg:text-6xl md:text-6xl text-3xl font-bold">Kegiatan</h1>
+          <h1 className="lg:text-4xl md:text-4xl text-3xl font-bold">Kegiatan</h1>
         </div>
         <div className="flex justify-end pl-10 pr-10">
           <Btn />
@@ -56,12 +56,12 @@ const Kegiatan = () => {
                   layout="responsive" 
                   width={800} 
                   height={600} 
-                  className="rounded-t-lg lg:h-[300px] h-[200px] md:h-[200px]" 
+                  className="rounded-t-lg lg:h-[200px] h-[200px] md:h-[400px]" 
                 />
                 <div className='p-5'>
                   <h1 className="lg:text-2xl md:text-2xl text-xl font-bold">{truncateText(data.judul, 23)}</h1>
                   <p className="lg:text-lg md:text-lg text-base font-medium">{data.tanggal}</p>
-                  <p className="lg:text-lg md:text-lg text-base" dangerouslySetInnerHTML={{ __html: truncateText(data.deskripsi, 100) }}></p>
+                  <p className="lg:text-lg md:text-lg text-base" dangerouslySetInnerHTML={{ __html: truncateText(data.deskripsi, 80) }}></p>
                 </div>
               </div>
             </Link>
