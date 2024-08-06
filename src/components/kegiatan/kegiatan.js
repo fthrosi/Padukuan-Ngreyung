@@ -50,14 +50,17 @@ const Kegiatan = () => {
           {datas.map((data) => (
             <Link href={`/informasi/detailInformasi/${data.id}`} key={data.id}>
               <div className="bg-white shadow-lg rounded-lg m-5">
-                <img 
+                <div className="lg:h-[200px] h-[200px] md:h-[400px]">
+                  <img 
                   src={data.image} 
                   alt="kegiatan" 
                   layout="responsive" 
                   width={800} 
                   height={600} 
-                  className="rounded-t-lg lg:h-[200px] h-[200px] md:h-[400px]" 
+                  className="rounded-t-lg w-full h-full object-cover" 
                 />
+                </div>
+                
                 <div className='p-5'>
                   <h1 className="lg:text-2xl md:text-2xl text-xl font-bold">{truncateText(data.judul, 23)}</h1>
                   <p className="lg:text-lg md:text-lg text-base font-medium">{data.tanggal}</p>

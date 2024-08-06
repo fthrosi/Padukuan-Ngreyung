@@ -24,11 +24,11 @@ const Struktur = () => {
       <>
         {data.map((data, index) => (
             <div key={index} className='flex justify-center lg:block md:block'>
-            <div  className="bg-white shadow-lg rounded-lg lg:max-w-7xl md:max-w-sm max-w-60 m-5">
+            <div className="bg-white shadow-lg rounded-lg lg:max-w-7xl md:max-w-sm max-w-60 m-5">
                 <Image src={data.image} alt="kegiatan" layout="responsive" width={50} height={50} className="rounded-t-lg" />
                 <div className='p-5'>
-                    <h1 className="lg:text-2xl md:text-2xl text-xl font-bold">{data.Nama}</h1>
-                    <p className="lg:text-lg md:text-lg text-base font-medium">{data.Jabatan}</p>
+                    <h1 className="lg:text-xl md:text-2xl text-xl font-bold">{data.Nama}</h1>
+                    <p className="lg:text-base md:text-lg text-base font-medium">{data.Jabatan}</p>
                 </div>
             </div>
             </div>

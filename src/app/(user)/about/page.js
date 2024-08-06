@@ -26,7 +26,7 @@ const About = () => {
 
   return (
     <div className="bg-[#354b396f] flex justify-center lg:pt-[110px] md:pt-[110px] pt-16">
-      <div className="bg-white w-[800px]">
+      <div className="bg-white w-[1000px]">
         <Dukuh />
         <Struktur />
         <Susunan />

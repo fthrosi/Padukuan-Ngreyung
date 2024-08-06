@@ -63,14 +63,13 @@ const Artikel = () => {
         datas.map((item, index) => (
           <Link href={`/informasi/detailInformasi/${item.id}`} key={index}>
             <div className="flex space-x-4 pt-5 pb-5">
-              <img 
-                src={item.image} 
-                alt="kegiatan" 
-                layout="responsive" 
-                width={0} 
-                height={0} 
-                className="rounded-t-lg lg:h-[300px] lg:w-[400px] md:w-[300px] md:h-[200px] w-[100px] h-[100px]" 
-              />
+              <div className="w-60 h-60 md:w-[300px] md:h-[200px] w-[100px] h-[100px] flex-shrink-0">
+                <img 
+                  src={item.image} 
+                  alt="kegiatan" 
+                  className="rounded-lg object-cover w-full h-full" 
+                />
+              </div>
               <div className="flex-grow text-[#354b39]">
                 <h1 className="font-semibold lg:font-bold md:font-bold lg:text-xl md:text-xl text-base">
                   {truncateText(item.judul, isMdScreen ? 100 : 40)}
@@ -82,6 +81,7 @@ const Artikel = () => {
             <hr />
           </Link>
         ))
+        
       )}
     </div>
   );
