@@ -2,19 +2,15 @@ import Image from 'next/image';
 
 const sambutan = () => {
   return (
-        <div className="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 bg-[#677D6A]">
-          <div className="flex lg:pt-20 md:pt-36 pt-16 sm:order-1 justify-center">
-            <div className="pb-10 relative w-80 h-60 md:w-96 md:h-[550px] lg:w-[550px] lg:h-[600px] rounded-xl">
+        <div className="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 bg-[#677D6A] px-6 py-8 gap-5 md:py-20 lg:px-24 lg:py-28">
+          <div className="flex order-2 md:order-1">
+            <div className="relative w-[45rem] h-56 md:w-[30rem] md:h-[49rem] lg:w-[60rem] lg:h-[31.5rem] rounded-xl">
               <Image src="/images/home.jpg" alt="padukuhan ngreyung" layout="fill" objectFit="cover" className='rounded-xl'/>
             </div>
           </div>
-          <div className="lg:pr-30 lg:pb-20 md:pb-36 pb-16 md:pr-14 pl-10 pr-10 lg:pt-20 md:pt-36 pt-10 sm:order-2 text-white">
-            <h1 className="lg:text-3xl md:text-2xl text-lg font-bold">
-              Padukuhan Ngreyung
-            </h1>
+          <div className="text-white order-1 flex items-center md:order-2">
             <p className="lg:text-xl text-justify whitespace-pre-wrap md:text-lg">
-              {`
-Selamat datang di website resmi Padukuhan Ngreyung. 
+              {`Selamat datang di website resmi Padukuhan Ngreyung. 
 
 Kami berharap platform ini menjadi jendela informasi yang memudahkan seluruh warga untuk mendapatkan berita terkini, program desa, serta layanan publik yang tersedia. Website ini juga diharapkan dapat menjadi sarana komunikasi dan interaksi antara pemerintah desa dan masyarakat, sehingga terjalin hubungan yang lebih harmonis dan transparan.
 

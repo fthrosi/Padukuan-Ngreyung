@@ -7,7 +7,7 @@ import Crsl from "@/components/home/carousel"
 const home = () => {
   return (
     <>
-      <div>
+      <div className="min-h-screen">
         <Hero/>
       </div>
       <div>

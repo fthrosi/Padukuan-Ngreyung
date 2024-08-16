@@ -18,15 +18,21 @@ const Navbar = () => {
   }, []);
   return (
     <>
-    <nav className={`py-4 lg:px-60  fixed w-screen ${scroll? "bg-[#354b39]":"bg-transparent"} z-50`}>
-      <div className={`lg:mx-auto flex md:items-center items-start md:justify-center lg:justify-between px-5 md:px-0 lg:px-0 ${open?"justify-end":"justify-between"} text-white `}>
-        <Link href="/" className={`display  ${open?"hidden":"flex items-center"}`}>
-          <div className="relative w-10 h-10 md:w-12 md:h-12 lg:w-12 lg:h-12 mr-2">
-            <Image src="/images/logo.png" alt="logo" layout="fill" objectFit="contain" />
+    <nav className={`py-4 lg:px-72 md:px-16 fixed w-screen md:flex md:justify-between items-center ${open? (scroll? "bg-[#354b39]":"bg-[#354b39]"):(scroll? "bg-[#354b39]":"bg-transparent transition-color duration-1000") } md:${scroll? "bg-[#354b39]":"bg-transparent transition-color duration-1000"} z-50`}>
+        <div className='flex items-center justify-between w-full px-6 text-white z-50 md:px-0 md:w-auto'>
+          <Link href="/">
+            <div className='flex justify-between items-center'>
+              <div className="relative w-10 h-10 md:w-12 md:h-12 lg:w-12 lg:h-12">
+                <Image src="/images/logo.png" alt="logo" layout="fill" objectFit="contain" />
+              </div>
+              <h1 className="lg:text-base md:text-base text-sm font-bold ml-2">Padukuhan Ngreyung</h1>
+            </div>
+          </Link>
+          <div className='md:hidden lg:hidden block relative w-6 h-6' onClick={() => setOpen(!open)}>
+              {open ? <Image src="/icon/cross-button.png" layout="fill" objectFit="contain" alt='logo'></Image>:<Image src="/icon/menu_24px.svg" layout="fill" objectFit="contain" alt='logo' className='text-black'></Image>}
           </div>
-          <h1 className="lg:text-base md:text-base text-sm font-bold ml-2">Padukuhan Ngreyung</h1>
-        </Link>
-        <ul className="nav-links hidden display md:flex lg:space-x-10 md:space-x-2 md:ml-7 lg:text-base md:text-base font-bold">
+        </div>
+        <ul className={`nav-links -z-50 absolute top-14 text-sm text-white bg-[#354b39] w-full py-5 flex flex-col justify-center items-center gap-2 transition-transform ${open? "translate-y-0" : "-translate-y-36"} md:flex md:translate-y-0 md:static md:flex-row md:gap-5 md:bg-transparent md:text-base md:w-auto`} onClick={() => setOpen(!open)}>
           <li>
             <Link href="/informasi">
               <h1 className=''>Informasi</h1>
@@ -39,29 +45,9 @@ const Navbar = () => {
           </li>
         </ul>
         <Link href="/informasi">
-          <button className={`btn md:block hidden lg:text-base text-sm ${scroll ? "bg-white text-[#283a2c]":"bg-[#283a2c] text-white"}   lg:px-1 lg:py-1 md:px-1 md:py-1 rounded-lg m-5`}>Telusuri</button>
+          <button className={`btn md:block hidden lg:text-base text-sm ${scroll ? "bg-white text-[#283a2c]":"bg-[#283a2c] text-white"}   lg:px-1 lg:py-1 md:py-2 md:px-3 rounded-lg`}>Telusuri</button>
         </Link>
-        <div className='md:hidden lg:hidden block relative w-5 h-5 mt-4' onClick={() => setOpen(!open)}>
-        {scroll ? (open ? <Image src="/icon/cross-button.png" layout="fill" objectFit="contain" alt='logo'></Image>:<Image src="/icon/equal.png" layout="fill" objectFit="contain" alt='logo'></Image>):(open ? <Image src="/icon/incorrect.png" layout="fill" objectFit="contain" alt='logo'></Image>:<Image src="/icon/equal.png" layout="fill" objectFit="contain" alt='logo'></Image>)}
-        </div>
-      </div>
     </nav>
-     <div className={`fixed top-0 left-0 w-screen h-screen bg-black bg-opacity-50 z-40 transform ${open ? "translate-x-0" : "-translate-x-full"} transition-transform duration-300 ease-in-out`}>
-     <div className="bg-white w-64 h-full p-5">
-       <ul className="space-y-4 text-lg mt-16">
-         <li>
-           <Link href="/informasi" onClick={() => setOpen(false)}>
-             Informasi
-           </Link>
-         </li>
-         <li>
-           <Link href="/about" onClick={() => setOpen(false)}>
-             Tentang Padukuhan
-           </Link>
-         </li>
-       </ul>
-     </div>
-   </div>
    </>
   );
 };

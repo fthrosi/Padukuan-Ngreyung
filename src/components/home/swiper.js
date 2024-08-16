@@ -47,7 +47,7 @@ const Myswiper = () => {
         slidesPerView={1}
         spaceBetween={30}
         loop={true}
-        className={`${style.swiper} p-10`}
+        className={`${style.swiper}`}
         breakpoints={{
           768: {
             slidesPerView: 2,
