@@ -17,7 +17,7 @@ const Footer = () => {
         </div>
         <div className='flex flex-col gap-2 lg:gap-8 order-2 md:w-auto'>
             <h1 className='flex lg:justify-center md:justify-center lg:text-2xl md:text-base font-bold text-xl'>Ikuti Kami</h1>
-            <ul className='flex justify-center items-center  lg:space-x-10 md:space-x-5 space-x-3'>
+            <ul className='flex justify-start items-center  lg:space-x-10 md:space-x-5 space-x-3'>
             <li><Link href="https://www.facebook.com/share/dYG4HbUFfPKdvvDt/?mibextid=qi2Omg"><img src="/icon/facebook.png" alt="Facebook" className='lg:h-10 lg:w-10 h-8 w-8' /></Link></li>
             <li><Link href="https://www.instagram.com/kim_padukuhanngreyung?igsh=bW43OHQzcXJqZ2po"><img src="/icon/instagram.png" alt="Instagram" className='lg:h-10 lg:w-10 h-8 w-8' /></Link></li>
             </ul>

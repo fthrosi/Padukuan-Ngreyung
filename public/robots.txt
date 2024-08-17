@@ -1,0 +1,23 @@
+# *
+User-agent: *
+Allow: /
+
+# Googlebot
+User-agent: Googlebot
+Allow: /
+
+# *
+User-agent: *
+Disallow: /admin/*
+
+# *
+User-agent: *
+Disallow: /login
+
+# Host
+Host: https://padukuhan-ngreyung.vercel.app
+
+# Sitemaps
+Sitemap: https://padukuhan-ngreyung.vercel.app/sitemap.xml
+Sitemap: https://padukuhan-ngreyung.vercel.app/sitemap-0.xml
+Sitemap: https://padukuhan-ngreyung.vercel.app/sitemap-1.xml

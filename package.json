@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "postbuild": "next-sitemap"
   },
   "dependencies": {
     "@nextui-org/react": "^2.4.6",
@@ -14,6 +15,7 @@
     "formik": "^2.4.6",
     "framer-motion": "^11.3.8",
     "next": "14.2.4",
+    "next-sitemap": "^4.2.3",
     "react": "^18",
     "react-dom": "^18",
     "react-hook-form": "^7.52.1",
