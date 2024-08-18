@@ -6,8 +6,8 @@ import Crsl from "@/components/home/carousel"
 
 const home = () => {
   return (
-    <>
-      <div className="min-h-screen">
+    <div className="min-h-screen">
+      <div>
         <Hero/>
       </div>
       <div>
@@ -22,7 +22,7 @@ const home = () => {
       <div>
         <Crsl/>
       </div>
-    </>
+    </div>
   )
 }
 export default home

@@ -47,8 +47,8 @@ const DetailInformasi = ({ params }) => {
                    <div className='lg:h-[700px]  md:h-[500px] h-[300px]'>
                         <img src={datas.gambar} alt={datas.judul} layout="responsive" width={0} height={0} className="rounded-t-lg w-full h-full" />
                    </div>
-                    
-                    <p className='lg:text-xl md:text-2xl text-xl lg:mt-10 md:mt-10 mt-5 text-justify' dangerouslySetInnerHTML={{ __html: datas.deskripsi }}/> 
+                    <p className='lg:text-xl md:text-2xl text-xl  mt-5 text-justify font-bold'>{datas.tanggal}</p>
+                    <p className='lg:text-xl md:text-2xl text-xl text-justify' dangerouslySetInnerHTML={{ __html: datas.deskripsi }}/> 
                     </>
                 )}
             

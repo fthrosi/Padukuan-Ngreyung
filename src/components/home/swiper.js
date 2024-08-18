@@ -6,7 +6,8 @@ import { collection, getDocs } from "firebase/firestore";
 import modalStyle from '@/utils/modal.module.css'; // Import CSS module
 
 import 'swiper/css';
-import 'swiper/css/pagination';
+
+import { Autoplay} from 'swiper/modules';
 
 const Myswiper = () => {
   const [data, setData] = useState([]);
@@ -47,7 +48,12 @@ const Myswiper = () => {
         slidesPerView={1}
         spaceBetween={30}
         loop={true}
+        autoplay={{
+          delay: 1500,
+          disableOnInteraction: false,
+        }}
         className={`${style.swiper}`}
+        modules={[Autoplay]}
         breakpoints={{
           768: {
             slidesPerView: 2,
@@ -59,12 +65,14 @@ const Myswiper = () => {
       >
         {data.map((item, index) => (
           <SwiperSlide key={index} className={style.swiperSlide}>
-            <img
-              src={item.image}
-              alt={`Slide ${index + 1}`}
-              className={style.swiperSlideImg}
-              onClick={() => openModal(item.image)}
-            />
+            <div className='shadow-lg rounded-lg'>
+              <img
+                src={item.image}
+                alt={`Slide ${index + 1}`}
+                className={`${style.swiperSlideImg}`}
+                onClick={() => openModal(item.image)}
+              />
+            </div>
           </SwiperSlide>
         ))}
       </Swiper>

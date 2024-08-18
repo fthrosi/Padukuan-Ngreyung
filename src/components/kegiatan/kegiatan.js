@@ -39,19 +39,19 @@ const Kegiatan = () => {
 
   return (
     <>
-      <div className='bg-[#677D6A] py-10 px-6 lg:px-24'>
-        <div className="flex flex-col gap-10">
-          <div className="text-center lg:py-10 text-white order-1">
+      <div className='bg-[#f5f5f5] py-10 px-6 lg:px-[clamp(2rem,5vw,4rem)]'>
+        <div className="flex flex-col gap-10 lg:gap-5">
+          <div className="text-center lg:py-5 text-[#354b39] order-1">
             <h1 className="lg:text-4xl md:text-4xl text-3xl font-bold">Kegiatan</h1>
           </div>
           <div className="flex justify-center order-3 md:order-2 md:justify-end">
             <Btn />
           </div>
-          <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-5 text-[#354b39] justify-center order-2">
+          <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-2 gap-5 text-[#354b39] justify-center order-2">
             {datas.map((data) => (
               <Link href={`/informasi/detailInformasi/${data.id}`} key={data.id}>
                 <div className="bg-white shadow-lg rounded-lg">
-                  <div className="lg:h-[200px] h-[200px] md:h-[400px]">
+                  <div className="lg:h-[200px] h-[50vw] md:h-[400px]">
                     <img 
                     src={data.image} 
                     alt="kegiatan" 
